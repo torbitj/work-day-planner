@@ -53,10 +53,12 @@ timeCards.forEach(function(timeCards){
 
     var rowEl = $('<tr>').addClass('row time-block col-12');
     var timeHead = $('<th>').addClass('hour col').text(timeCards.time);
-    var taskEl = $('<td>').addClass('col-9').text(timeCards.task);
-    var saveEl = $('<td>').addClass('col').text(timeCards.save);
+    var taskEl = $('<td>').addClass('col-10').text(timeCards.tasks);
+    var saveEl = $('<td>').addClass('col btn saveBtn').text(timeCards.save);
+    var saveIcon = $('<i>').addClass('fas fa-save fa-lg');
 
-    rowEl.append(timeHead, taskEl, saveEl)
-    timeContainer.append(rowEl)
+    saveEl.append(saveIcon);
+    rowEl.append(timeHead, taskEl, saveEl);
+    timeContainer.append(rowEl);
     
 })

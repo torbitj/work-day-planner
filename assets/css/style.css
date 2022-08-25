@@ -35,6 +35,8 @@ textarea{
   white-space: pre-wrap;
   height: 80px;
   border-top: 1px solid white;
+  min-width: 100vw;
+  padding-left: 20px;
 }
 
 .hour {
