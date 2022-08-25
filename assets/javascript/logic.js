@@ -51,9 +51,9 @@ var timeCards = [
 
 timeCards.forEach(function(timeCards){
 
-    var rowEl = $('<tr>').addClass('container row time-block col-12');
-    var timeHead = $('<th>').addClass('col hour').text(timeCards.time);
-    var taskEl = $('<td>').addClass('col-10').text(timeCards.task);
+    var rowEl = $('<tr>').addClass('row time-block col-12');
+    var timeHead = $('<th>').addClass('hour col').text(timeCards.time);
+    var taskEl = $('<td>').addClass('col-9').text(timeCards.task);
     var saveEl = $('<td>').addClass('col').text(timeCards.save);
 
     rowEl.append(timeHead, taskEl, saveEl)
