@@ -51,7 +51,7 @@ var timeCards = [
 
 timeCards.forEach(function(timeCards){
 
-    var rowEl = $('<tr>').addClass('container row time-block w-100');
+    var rowEl = $('<tr>').addClass('container row time-block col-12');
     var timeHead = $('<th>').addClass('col hour').text(timeCards.time);
     var taskEl = $('<td>').addClass('col-10').text(timeCards.task);
     var saveEl = $('<td>').addClass('col').text(timeCards.save);
