@@ -1,5 +1,7 @@
-var timeContainer = $('#row-container')
-console.log(timeContainer)
+var timeContainer = $('#row-container');
+var currentDay = $('#currentDay');
+var todayDate = moment().format('MMM Do YYYY');
+console.log(timeContainer);
 // time objects with content
 var timeCards = [
     {
@@ -62,3 +64,5 @@ timeCards.forEach(function(timeCards){
     timeContainer.append(rowEl);
     
 })
+
+currentDay.text(todayDate)
