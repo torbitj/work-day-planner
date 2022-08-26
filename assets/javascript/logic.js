@@ -3,7 +3,8 @@ var saveButtonEl = $('.saveBtn');
 var currentDay = $('#currentDay');
 var todayDate = moment().format('MMM Do YYYY');
 var currentTime= moment().format('H');
-console.log(currentTime);
+// Add Current Date to Jumbotron
+currentDay.text(todayDate)
 // time objects with content
 var timeCards = [
     {
@@ -75,37 +76,41 @@ timeCards.forEach(function(timeCards){
     rowEl.append(timeHead, taskEl, saveEl);
     taskEl.append(textTaskEl);
     timeContainer.append(rowEl);
-    console.log(timeConvert);
 })
-// Add Current Date to Jumbotron
-currentDay.text(todayDate)
 
-// Functions to save text
+// Function to save text to local storage by pressing button field or icon
 
 function saveText(event) {
     
     if(event.target.matches('.btn') === true) {
         var index = event.target.parentElement.getAttribute('data-index');
         var textAreaInput =  event.target.parentElement.children[1].children[0].value;
-        localStorage.setItem(JSON.stringify(index), textAreaInput);
-        console.log(index);
-        console.log(textAreaInput);
-        console.log('clicked');
+        localStorage.setItem(index, textAreaInput);
+        
     } 
 
     if(event.target.matches('.fas') === true) {
         var index = event.target.parentElement.parentElement.getAttribute('data-index');
         var textAreaInput =  event.target.parentElement.parentElement.children[1].children[0].value;
-        localStorage.setItem(JSON.stringify(index), textAreaInput);
-        console.log(index);
-        console.log(textAreaInput);
-        console.log('clicked');
+        localStorage.setItem(index, textAreaInput);
     }
 }
 
+// Render text to right time row if text is saved in local storage
 function renderText() {
-    JSON.parse(localStorage.getItem(index))
+    for (var i = 9; i < 17; i++) {
+        var localKey = localStorage.getItem(i);
+        var index = $(`tr[data-index=${i}]`);
+        var textAreaText = index.find('textarea')
+        if (localKey !== null) {
+                $(textAreaText).text(localKey)
+        }
+    }
 }
 
+// Run save function on click
 timeContainer.on('click', saveText);
+// Run render text funcion on page load
+renderText();
+
 
