@@ -1,4 +1,5 @@
 var timeContainer = $('#row-container');
+var saveButtonEl = $('.saveBtn')
 var currentDay = $('#currentDay');
 var todayDate = moment().format('MMM Do YYYY');
 var currentTime= moment().format('H');
@@ -58,7 +59,7 @@ timeCards.forEach(function(timeCards){
     var timeHead = $('<th>').addClass('hour col').attr('data-mt', 'd'.replace(/d/g, timeConvert)).text(timeCards.time);
     var taskEl = $('<td>').addClass('col-10').text(timeCards.tasks);
     var textTaskEl = $('<textarea>').addClass('form-control bg-transparent border-0');
-    var saveEl = $('<td>').addClass('col btn saveBtn').text(timeCards.save);
+    var saveEl = $('<td>').addClass('col btn saveBtn d-flex align-items-center justify-content-center').text(timeCards.save);
     var saveIcon = $('<i>').addClass('fas fa-save fa-lg');
     
 
