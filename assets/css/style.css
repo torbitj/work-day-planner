@@ -1,9 +1,10 @@
+/* Updated Font */
 body {
   font-family: 'Rubik Dirt', cursive;
   font-size: 16px;
   line-height: 1;
 }
-
+/* Updated Font */
 textarea{
   font-family: 'Pacifico', cursive;
   background: transparent;
@@ -31,6 +32,7 @@ textarea{
   border-radius: 15px;
 }
 
+/* updated width to be full window width */
 .row {
   white-space: pre-wrap;
   height: 80px;

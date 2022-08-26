@@ -53,7 +53,7 @@ var timeCards = [
         save: ''
     }
 ]
-// Create new row for every time card, including class and styles
+// Create new row for every time card, including class, styles and data attributes
 timeCards.forEach(function(timeCards){
     var timeConvert = moment(timeCards.time, 'hA').format('H');
     var rowEl = $('<tr>').addClass('row time-block col-12').attr('data-index', 'd'.replace(/d/g, timeConvert));
@@ -103,7 +103,7 @@ function renderText() {
         var index = $(`tr[data-index=${i}]`);
         var textAreaText = index.find('textarea')
         if (localKey !== null) {
-                $(textAreaText).text(localKey)
+            $(textAreaText).text(localKey)
         }
     }
 }
