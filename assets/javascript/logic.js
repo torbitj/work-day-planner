@@ -87,20 +87,24 @@ function saveText(event) {
     if(event.target.matches('.btn') === true) {
         var index = event.target.parentElement.getAttribute('data-index');
         var textAreaInput =  event.target.parentElement.children[1].children[0].value;
-        localStorage.setItem(JSON.stringify(index), textAreaInput)
+        localStorage.setItem(JSON.stringify(index), textAreaInput);
         console.log(index);
-        console.log(textAreaInput)
-        console.log('clicked')
+        console.log(textAreaInput);
+        console.log('clicked');
     } 
 
     if(event.target.matches('.fas') === true) {
         var index = event.target.parentElement.parentElement.getAttribute('data-index');
         var textAreaInput =  event.target.parentElement.parentElement.children[1].children[0].value;
-        localStorage.setItem(JSON.stringify(index), textAreaInput)
+        localStorage.setItem(JSON.stringify(index), textAreaInput);
         console.log(index);
-        console.log(textAreaInput)
-        console.log('clicked')
+        console.log(textAreaInput);
+        console.log('clicked');
     }
+}
+
+function renderText() {
+    JSON.parse(localStorage.getItem(index))
 }
 
 timeContainer.on('click', saveText);
