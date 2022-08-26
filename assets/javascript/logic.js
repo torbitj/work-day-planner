@@ -60,7 +60,7 @@ timeCards.forEach(function(timeCards){
     var taskEl = $('<td>').addClass('col-10').text(timeCards.tasks);
     var textTaskEl = $('<textarea>').addClass('form-control bg-transparent border-0').attr('data-text', 'd'.replace(/d/g, timeConvert));
     var saveEl = $('<td>').addClass('col btn saveBtn d-flex align-items-center justify-content-center').text(timeCards.save);
-    var saveIcon = $('<i>').addClass('fas fa-save fa-lg');
+    var saveIcon = $('<i>').addClass('fas fa-save fa-sm');
     
     // Timecard backgroung to correlate to time of day
     if (timeHead.data('mt') == currentTime) {
@@ -84,9 +84,18 @@ currentDay.text(todayDate)
 
 function saveText(event) {
     
-    if(event.target.matches('.btn') === true){
+    if(event.target.matches('.btn') === true) {
         var index = event.target.parentElement.getAttribute('data-index');
         var textAreaInput =  event.target.parentElement.children[1].children[0].value;
+        localStorage.setItem(JSON.stringify(index), textAreaInput)
+        console.log(index);
+        console.log(textAreaInput)
+        console.log('clicked')
+    } 
+
+    if(event.target.matches('.fas') === true) {
+        var index = event.target.parentElement.parentElement.getAttribute('data-index');
+        var textAreaInput =  event.target.parentElement.parentElement.children[1].children[0].value;
         localStorage.setItem(JSON.stringify(index), textAreaInput)
         console.log(index);
         console.log(textAreaInput)
