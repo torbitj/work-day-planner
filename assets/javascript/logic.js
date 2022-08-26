@@ -58,8 +58,8 @@ timeCards.forEach(function(timeCards){
     var rowEl = $('<tr>').addClass('row time-block col-12');
     var timeHead = $('<th>').addClass('hour col').attr('data-mt', 'd'.replace(/d/g, timeConvert)).text(timeCards.time);
     var taskEl = $('<td>').addClass('col-10').text(timeCards.tasks);
-    var textTaskEl = $('<textarea>').addClass('form-control bg-transparent border-0');
-    var saveEl = $('<td>').addClass('col btn saveBtn d-flex align-items-center justify-content-center').text(timeCards.save);
+    var textTaskEl = $('<textarea>').addClass('form-control bg-transparent border-0').attr('data-text', 'd'.replace(/d/g, timeConvert));
+    var saveEl = $('<td>').addClass('col btn saveBtn d-flex align-items-center justify-content-center').attr('data-index', 'd'.replace(/d/g, timeConvert)).text(timeCards.save);
     var saveIcon = $('<i>').addClass('fas fa-save fa-lg');
     
 
@@ -77,5 +77,18 @@ timeCards.forEach(function(timeCards){
     timeContainer.append(rowEl);
     console.log(timeConvert);
 })
-
+// Add Current Date to Jumbotron
 currentDay.text(todayDate)
+
+// Functions to save text
+
+// function saveText(event) {
+//     event.preventDefault()
+
+//     if(event.target.matches('btn'))
+        // if (event.target.data('index') == textTaskEl.data('index')){
+        
+//     }
+// }
+
+// saveButtonEl.on('click', saveText);
