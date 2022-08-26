@@ -52,7 +52,7 @@ var timeCards = [
         save: ''
     }
 ]
-
+// Create new row for every time card, including class and styles
 timeCards.forEach(function(timeCards){
     var timeConvert = moment(timeCards.time, 'hA').format('H');
     var rowEl = $('<tr>').addClass('row time-block col-12');
