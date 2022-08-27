@@ -98,13 +98,14 @@ function saveText(event) {
 
 // Render text to right time row if text is saved in local storage
 function renderText() {
-    for (var i = 9; i < 17; i++) {
+    for (var i = 9; i < 18; i++) {
         var localKey = localStorage.getItem(i);
         var index = $(`tr[data-index=${i}]`);
         var textAreaText = index.find('textarea')
         if (localKey !== null) {
             $(textAreaText).text(localKey)
         }
+        console.log(localKey)
     }
 }
 
