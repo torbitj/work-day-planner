@@ -8,11 +8,11 @@ Ultimately, this interactive planner allows users to track their day with the co
 
 ## Live Link
 
-https://ffjt07.github.io/work-day-planner/
+https://torbitj.github.io/work-day-planner/
 
 ## Github Link
 
-https://github.com/ffjt07/work-day-planner
+https://github.com/torbitj/work-day-planner
 
 ## Preview
 
